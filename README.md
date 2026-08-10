@@ -72,10 +72,6 @@ I design before I implement, because the cost of a bad data model compounds and 
 
 <img src="https://raw.githubusercontent.com/AraGhah/AraGhah/output/snake-dark.svg" alt="Contribution snake" width="100%"/>
 
-<br/>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AraGhah&layout=compact&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9" width="42%"/>
-
 <br/><br/>
 
 ```
