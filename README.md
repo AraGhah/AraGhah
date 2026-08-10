@@ -20,7 +20,7 @@ Third-year Computer Science Technology student at Collège de Bois-de-Boulogne, 
 
 Incident management and on-call platform, in the vein of PagerDuty.
 
-<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/assets/pipeline-sentinelops.svg" alt="Three duplicate alerts are fingerprinted, collapsed into one incident, and routed to an on-call responder" width="100%"/>
+<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/Assets/pipeline-sentinelops.svg" alt="Three duplicate alerts are fingerprinted, collapsed into one incident, and routed to an on-call responder" width="100%"/>
 
 Alerts arrive from multiple sources at unpredictable rates, and the same underlying failure often fires dozens of times. SentinelOps ingests those alerts, deduplicates them into a single incident, routes it to a responder, and tracks state through to resolution in real time.
 
