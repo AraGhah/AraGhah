@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/assets/hero.svg" alt="Ara Ghahramanyan, backend and full-stack developer in Montréal" width="100%"/>
+<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/Assets/hero.svg" alt="Ara Ghahramanyan, backend and full-stack developer in Montréal" width="100%"/>
 
 <br/>
 
@@ -36,7 +36,7 @@ Event-driven on AWS Lambda with infrastructure defined in CDK, so environments a
 
 Missed-call recovery for local service businesses.
 
-<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/assets/flow-tradecatch.svg" alt="A missed call hits an idempotent webhook handler, which sends an SMS to the caller and alerts the owner" width="100%"/>
+<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/Assets/flow-tradecatch.svg" alt="A missed call hits an idempotent webhook handler, which sends an SMS to the caller and alerts the owner" width="100%"/>
 
 A plumber who misses a call while under a sink loses the job to whoever answers next. An unanswered call triggers an automated SMS follow-up, captures the lead, and notifies the owner, so the enquiry survives the moment nobody picked up.
 
