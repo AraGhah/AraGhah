@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" role="img" aria-label="SentinelOps pipeline: three duplicate alerts are fingerprinted and collapsed into a single incident, which is routed to an on-call responder">
+  <defs>
+    <style>
+      .mono  { font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; }
+      .lbl   { fill: #c9d1d9; font-size: 13px; }
+      .sub   { fill: #8b949e; font-size: 11px; }
+      .cap   { fill: #6e7681; font-size: 10.5px; letter-spacing: .6px; }
+      .wire  { stroke: #30363d; stroke-width: 1.5; fill: none; }
+
+      @keyframes dash { to { stroke-dashoffset: -24; } }
+      .flow { stroke: #21262d; stroke-width: 1.5; fill: none; stroke-dasharray: 4 8; animation: dash 1.4s linear infinite; }
+
+      @keyframes glow { 0%, 100% { opacity: .18 } 50% { opacity: .5 } }
+      .halo { animation: glow 4s ease-in-out infinite; }
+    </style>
+    <path id="p1" d="M150 78 C 236 78 244 170 320 170"/>
+    <path id="p2" d="M150 170 L 320 170"/>
+    <path id="p3" d="M150 262 C 236 262 244 170 320 170"/>
+    <path id="p4" d="M480 170 L 560 170"/>
+    <path id="p5" d="M720 170 L 800 170"/>
+  </defs>
+
+  <rect x="1" y="1" width="958" height="338" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <text class="mono cap" x="28" y="30">SENTINELOPS  ·  ALERT INGESTION PATH</text>
+
+  <use href="#p1" class="wire"/><use href="#p2" class="wire"/><use href="#p3" class="wire"/>
+  <use href="#p4" class="wire"/><use href="#p5" class="wire"/>
+  <use href="#p1" class="flow"/><use href="#p2" class="flow"/><use href="#p3" class="flow"/>
+  <use href="#p4" class="flow"/><use href="#p5" class="flow"/>
+
+  <g class="mono">
+    <rect x="28" y="56" width="122" height="44" rx="8" fill="#161b22" stroke="#30363d"/>
+    <circle cx="46" cy="78" r="4" fill="#f85149"/>
+    <text class="lbl" x="60" y="82">alert</text>
+    <rect x="28" y="148" width="122" height="44" rx="8" fill="#161b22" stroke="#30363d"/>
+    <circle cx="46" cy="170" r="4" fill="#f85149"/>
+    <text class="lbl" x="60" y="174">alert</text>
+    <rect x="28" y="240" width="122" height="44" rx="8" fill="#161b22" stroke="#30363d"/>
+    <circle cx="46" cy="262" r="4" fill="#f85149"/>
+    <text class="lbl" x="60" y="266">alert</text>
+    <text class="sub" x="28" y="306">one failure, three pages</text>
+  </g>
+
+  <g class="mono">
+    <rect class="halo" x="314" y="126" width="172" height="88" rx="12" fill="#58a6ff"/>
+    <rect x="320" y="132" width="160" height="76" rx="10" fill="#161b22" stroke="#58a6ff" stroke-opacity=".6"/>
+    <text class="lbl" x="400" y="163" text-anchor="middle">fingerprint</text>
+    <text class="sub" x="400" y="182" text-anchor="middle">atomic upsert</text>
+    <text class="cap" x="400" y="306" text-anchor="middle">RACE-SAFE WRITE PATH</text>
+    <circle cx="400" cy="170" r="10" fill="none" stroke="#58a6ff" opacity="0">
+      <animate attributeName="r" values="10;54" keyTimes="0;1" dur="4s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.55;0" keyTimes="0;.08;.3" dur="4s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g class="mono">
+    <rect x="560" y="132" width="160" height="76" rx="10" fill="#161b22" stroke="#30363d">
+      <animate attributeName="stroke" values="#30363d;#3fb950;#30363d" keyTimes="0;.6;.75" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text class="lbl" x="640" y="163" text-anchor="middle">1 incident</text>
+    <text class="sub" x="640" y="182" text-anchor="middle">open · stateful</text>
+    <text class="cap" x="640" y="306" text-anchor="middle">DEDUPLICATED</text>
+  </g>
+
+  <g class="mono">
+    <rect x="800" y="132" width="132" height="76" rx="10" fill="#161b22" stroke="#30363d"/>
+    <circle cx="866" cy="158" r="4" fill="#3fb950">
+      <animate attributeName="opacity" values="1;.25;1" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <text class="lbl" x="866" y="184" text-anchor="middle">on-call</text>
+    <text class="cap" x="866" y="306" text-anchor="middle">ROUTED</text>
+  </g>
+
+  <g fill="#f85149">
+    <circle r="5" opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.04;.3;.34;1" dur="4s" repeatCount="indefinite"/>
+      <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.04;.32;1" calcMode="linear"><mpath href="#p1"/></animateMotion>
+    </circle>
+    <circle r="5" opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.09;.33;.37;1" dur="4s" repeatCount="indefinite"/>
+      <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.09;.35;1" calcMode="linear"><mpath href="#p2"/></animateMotion>
+    </circle>
+    <circle r="5" opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.14;.36;.4;1" dur="4s" repeatCount="indefinite"/>
+      <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.14;.38;1" calcMode="linear"><mpath href="#p3"/></animateMotion>
+    </circle>
+  </g>
+
+  <g fill="#58a6ff">
+    <circle r="5" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.44;.47;.58;.62;1" dur="4s" repeatCount="indefinite"/>
+      <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.45;.6;1" calcMode="linear"><mpath href="#p4"/></animateMotion>
+    </circle>
+  </g>
+
+  <g fill="#3fb950">
+    <circle r="5" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.7;.73;.86;.9;1" dur="4s" repeatCount="indefinite"/>
+      <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.71;.88;1" calcMode="linear"><mpath href="#p5"/></animateMotion>
+    </circle>
+  </g>
+</svg>

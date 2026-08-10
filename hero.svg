@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="Terminal introduction: Ara Ghahramanyan, backend and full-stack developer in Montreal, seeking an internship starting January 2027">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; }
+      .prompt { fill: #58a6ff; }
+      .txt    { fill: #c9d1d9; }
+      .dim    { fill: #8b949e; }
+      .ok     { fill: #3fb950; }
+      .name   { fill: #f0f6fc; font-weight: 700; letter-spacing: .5px; }
+
+      @keyframes blink { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+      .cursor { animation: blink 1.05s step-end infinite; }
+
+      @keyframes breathe { 0%, 100% { opacity: 1 } 50% { opacity: .3 } }
+      .live { animation: breathe 2.6s ease-in-out infinite; }
+
+      @keyframes sweep {
+        0%   { transform: translateY(-60px); opacity: 0 }
+        12%  { opacity: .5 }
+        88%  { opacity: .5 }
+        100% { transform: translateY(320px); opacity: 0 }
+      }
+      .scan { animation: sweep 9s linear infinite; }
+    </style>
+
+    <linearGradient id="scanline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset=".5"  stop-color="#58a6ff" stop-opacity=".55"/>
+      <stop offset="1"   stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"  stop-color="#58a6ff" stop-opacity=".55"/>
+      <stop offset=".5" stop-color="#30363d"/>
+      <stop offset="1"  stop-color="#3fb950" stop-opacity=".4"/>
+    </linearGradient>
+
+    <clipPath id="c1"><rect x="34" y="84" width="0" height="24">
+      <animate attributeName="width" from="0" to="640" begin="0.25s" dur="0.55s" fill="freeze"/></rect></clipPath>
+    <clipPath id="c2"><rect x="34" y="112" width="0" height="34">
+      <animate attributeName="width" from="0" to="640" begin="0.95s" dur="0.7s" fill="freeze"/></rect></clipPath>
+    <clipPath id="c3"><rect x="34" y="152" width="0" height="24">
+      <animate attributeName="width" from="0" to="640" begin="1.75s" dur="0.7s" fill="freeze"/></rect></clipPath>
+    <clipPath id="c4"><rect x="34" y="188" width="0" height="24">
+      <animate attributeName="width" from="0" to="640" begin="2.7s" dur="0.65s" fill="freeze"/></rect></clipPath>
+    <clipPath id="c5"><rect x="34" y="216" width="0" height="24">
+      <animate attributeName="width" from="0" to="720" begin="3.5s" dur="0.85s" fill="freeze"/></rect></clipPath>
+    <clipPath id="c6"><rect x="34" y="244" width="0" height="24">
+      <animate attributeName="width" from="0" to="720" begin="4.5s" dur="0.8s" fill="freeze"/></rect></clipPath>
+  </defs>
+
+  <rect x="1.5" y="1.5" width="897" height="297" rx="14" fill="#0d1117" stroke="url(#edge)" stroke-width="1.5"/>
+
+  <g clip-path="url(#window)">
+    <rect class="scan" x="0" y="0" width="900" height="2" fill="url(#scanline)"/>
+  </g>
+  <clipPath id="window"><rect x="2" y="46" width="896" height="252" rx="12"/></clipPath>
+
+  <path d="M2 15.5 A13.5 13.5 0 0 1 15.5 2 H884.5 A13.5 13.5 0 0 1 898 15.5 V46 H2 Z" fill="#161b22"/>
+  <line x1="2" y1="46" x2="898" y2="46" stroke="#30363d"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="46" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="66" cy="24" r="5.5" fill="#28c840"/>
+  <text class="mono dim" x="96" y="29" font-size="12.5">ara@montreal: ~/profile</text>
+  <circle class="live" cx="716" cy="24" r="4" fill="#3fb950"/>
+  <text class="mono ok" x="730" y="28.5" font-size="12">available January 2027</text>
+
+  <g clip-path="url(#c1)">
+    <text class="mono" x="34" y="101" font-size="14.5"><tspan class="prompt">$</tspan><tspan class="txt" dx="8">whoami</tspan></text>
+  </g>
+
+  <g clip-path="url(#c2)">
+    <text class="mono name" x="34" y="140" font-size="28">Ara Ghahramanyan</text>
+  </g>
+
+  <g clip-path="url(#c3)">
+    <text class="mono dim" x="34" y="169" font-size="14">Backend &amp; full-stack developer  ·  Montréal, QC  ·  FR / EN</text>
+  </g>
+
+  <g clip-path="url(#c4)">
+    <text class="mono" x="34" y="205" font-size="14.5"><tspan class="prompt">$</tspan><tspan class="txt" dx="8">cat stack.txt</tspan></text>
+  </g>
+
+  <g clip-path="url(#c5)">
+    <text class="mono dim" x="34" y="233" font-size="13.5"><tspan class="ok">›</tspan><tspan dx="8">C# / .NET  ·  TypeScript  ·  AWS Lambda + CDK  ·  PostgreSQL  ·  Redis</tspan></text>
+  </g>
+
+  <g clip-path="url(#c6)">
+    <text class="mono dim" x="34" y="261" font-size="13.5"><tspan class="ok">›</tspan><tspan dx="8">event pipelines, integrations, and the reliability work around them</tspan></text>
+  </g>
+
+  <g opacity="0">
+    <set attributeName="opacity" to="1" begin="5.4s" fill="freeze"/>
+    <text class="mono prompt" x="34" y="289" font-size="14.5">$</text>
+    <rect class="cursor" x="48" y="277" width="9" height="16" fill="#58a6ff"/>
+  </g>
+</svg>
