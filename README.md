@@ -69,10 +69,7 @@ Each project is a door. Opening one leads to a case study covering the problem, 
 I design before I implement, because the cost of a bad data model compounds and the cost of a bad function does not. I assume every external service will fail, arrive twice, or arrive out of order, and I write the handler accordingly. I automate anything I have done manually three times.
 
 <div align="center">
-
-<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/output/snake-dark.svg" alt="Contribution snake" width="100%"/>
-
-<br/><br/>
+<br/>
 
 ```
 ara@montreal ~ $ echo "Open to internships starting January 2027."
