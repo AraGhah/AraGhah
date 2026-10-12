@@ -4,7 +4,7 @@
 
 <br/>
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Hall_of_Projects-000000?style=flat-square&logo=vercel&logoColor=white)](https://ara-hall-of-projects.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Hall_of_Projects-000000?style=flat-square&logo=vercel&logoColor=white)](http://araghah.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-ara--ghahramanyan-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ara-ghahramanyan)
 [![Email](https://img.shields.io/badge/Email-Contact-c9d1d9?style=flat-square&logo=maildotru&logoColor=white)](mailto:YOUR_EMAIL)
 
