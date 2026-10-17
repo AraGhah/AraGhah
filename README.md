@@ -4,59 +4,67 @@
 
 <br/>
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Hall_of_Projects-000000?style=flat-square&logo=vercel&logoColor=white)](http://araghah.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ara--ghahramanyan-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ara-ghahramanyan)
-[![Email](https://img.shields.io/badge/Email-Contact-c9d1d9?style=flat-square&logo=maildotru&logoColor=white)](mailto:YOUR_EMAIL)
+
+
+
 
 </div>
 
 Third-year Computer Science Technology student at Collège de Bois-de-Boulogne, graduating June 2027. I work mostly in C#/.NET and TypeScript, with AWS and PostgreSQL underneath.
 
-**Looking for a software development internship starting January 2027**, in Montréal or Laval (on-site or hybrid), or fully remote within Canada.
+Looking for a software development internship starting January 2027, in Montréal or Laval (on-site or hybrid), or fully remote within Canada.
 
-## Projects
+Projects
 
-### SentinelOps
+Dossier
+
+AI-powered prospect research and personalized cold email generation.
+
+Dossier tackles a common problem in outbound sales: meaningful personalization takes time, but generic messages rarely stand out. The platform automates prospect research and turns information about people and companies into tailored outreach at scale.
+
+The workflow gathers information from external sources, processes it through AI models, and generates personalized messages that can be used in outbound campaigns. It connects research, generation, validation, and delivery-oriented workflows rather than treating each email as an isolated prompt.
+
+The engineering challenge is reliability when an external AI service does not always return predictable output. During development, some responses contained incorrect information, missing fields, or invalid JSON. I improved the prompts and added backend validation to reject malformed or incomplete responses before they reached the database.
+
+Built with n8n automation, Supabase/PostgreSQL, Apify for prospect data, and Claude for research and generation.
+
+n8n Supabase PostgreSQL Apify Claude API REST APIs JSON Validation Workflow Automation
+
+Live site
+
+SentinelOps
 
 Incident management and on-call platform, in the vein of PagerDuty.
 
-<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/Assets/pipeline-sentinelops.svg" alt="Three duplicate alerts are fingerprinted, collapsed into one incident, and routed to an on-call responder" width="100%"/>
+<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/Assets/pipeline-sentinelops.svg" alt="Duplicate alerts are grouped into an incident and routed to an on-call responder" width="100%"/>
 
 Alerts arrive from multiple sources at unpredictable rates, and the same underlying failure often fires dozens of times. SentinelOps ingests those alerts, deduplicates them into a single incident, routes it to a responder, and tracks state through to resolution in real time.
 
-The interesting problem is the one in the diagram: two alerts describing the same failure can land milliseconds apart on different Lambda invocations, and both will happily create an incident unless the write path is designed against it. [Add one sentence on how you actually solved it: fingerprint keys, a Redis lock, a unique constraint plus upsert, whichever it was. This is the line an interviewer will stop on.]
+A key concurrency problem is that two alerts describing the same failure can arrive milliseconds apart on different Lambda invocations. Without a carefully designed write path, both can create separate incidents. Handling duplicate events and keeping incident state consistent are central concerns in the system.
 
 Event-driven on AWS Lambda with infrastructure defined in CDK, so environments are reproducible rather than hand-configured.
 
-`C#` `ASP.NET Core` `AWS Lambda` `AWS CDK` `PostgreSQL` `Redis` `Next.js` `TypeScript` `Docker`
+C# ASP.NET Core AWS Lambda AWS CDK PostgreSQL Redis Next.js TypeScript Docker
 
-[Repository](https://github.com/AraGhah/SentinelOps)
+Repository
 
-### TradeCatch
+TradeCatch
 
-Missed-call recovery for local service businesses.
+AI receptionist and missed-call recovery for local service businesses.
 
-<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/Assets/flow-tradecatch.svg" alt="A missed call hits an idempotent webhook handler, which sends an SMS to the caller and alerts the owner" width="100%"/>
+<img src="https://raw.githubusercontent.com/AraGhah/AraGhah/main/Assets/flow-tradecatch.svg" alt="TradeCatch missed-call recovery flow: webhook, SMS follow-up, and owner notification" width="100%"/>
 
-A plumber who misses a call while under a sink loses the job to whoever answers next. An unanswered call triggers an automated SMS follow-up, captures the lead, and notifies the owner, so the enquiry survives the moment nobody picked up.
+A plumber who misses a call while under a sink can lose the job to whoever answers next. TradeCatch helps contractors capture those opportunities through an AI receptionist and automated follow-up workflows.
 
-Most of the engineering sits in the parts customers never see. Telephony webhooks arrive out of order and more than once, so message handling has to be idempotent. Delivery is not guaranteed, so failures need retries and a record of what actually reached the customer. The site is bilingual end to end, which means routing, content, and outbound templates all carry locale.
+The AI receptionist is designed to answer incoming calls, respond to common customer questions, book appointments, and transfer calls to the contractor when a human is needed. If a call still goes unanswered, the missed-call workflow sends an SMS follow-up, captures the lead, and alerts the owner.
 
-`Next.js` `TypeScript` `PostgreSQL` `Twilio` `Resend` `Cloudflare` `Tailwind CSS` `CI/CD`
+Most of the engineering sits in the parts customers never see. Telephony webhooks may arrive out of order or more than once, so message handling must be idempotent. Delivery is not guaranteed, so failures need retries and a record of what actually reached the customer. The platform also supports bilingual English and French communication across the site and customer-facing messages.
 
-[Repository](https://github.com/AraGhah/TradeCatch)
+Next.js TypeScript PostgreSQL Twilio Resend Cloudflare Tailwind CSS AI Integration Webhooks CI/CD
 
-### Hall of Projects
+Repository
 
-My portfolio, built as a space you walk through rather than a page you scroll.
-
-Each project is a door. Opening one leads to a case study covering the problem, the architecture, and the decisions I would make differently now. The build is an exercise in animation performance and state: transitions stay smooth while route changes, locale, and view state are kept in sync, and the whole thing is bilingual through next-intl.
-
-`Next.js` `TypeScript` `Framer Motion` `next-intl` `Tailwind CSS`
-
-[Live site](https://ara-hall-of-projects.vercel.app) · [Repository](https://github.com/AraGhah/Portfolio)
-
-## Stack
+Stack
 
 <div align="center">
 
@@ -64,18 +72,16 @@ Each project is a door. Opening one leads to a case study covering the problem, 
 
 </div>
 
-## How I work
+How I work
 
 I design before I implement, because the cost of a bad data model compounds and the cost of a bad function does not. I assume every external service will fail, arrive twice, or arrive out of order, and I write the handler accordingly. I automate anything I have done manually three times.
 
 <div align="center">
 <br/>
 
-```
 ara@montreal ~ $ echo "Open to internships starting January 2027."
 Open to internships starting January 2027.
 
 ara@montreal ~ $ _
-```
 
 </div>
